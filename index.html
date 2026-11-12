@@ -4,150 +4,414 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Nabila Tarannum | Profile</title>
+	<title>Nabila Tarannum | Cybersecurity & Python Engineer</title>
 	<style>
+		:root {
+			--bg-color: #0d1117;
+			--card-bg: #161b22;
+			--text-primary: #c9d1d9;
+			--text-secondary: #8b949e;
+			--accent: #58a6ff;
+			--accent-green: #3fb950;
+			--border: #30363d;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
 		body {
-			font-family: "Segoe UI", Arial, sans-serif;
-			background: #0f172a;
-			color: #e2e8f0;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+			background-color: var(--bg-color);
+			color: var(--text-primary);
+			line-height: 1.6;
 			margin: 0;
 			padding: 0;
-			line-height: 1.6;
+		}
+
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 40px 20px;
 		}
 
 		header {
 			text-align: center;
-			padding: 40px 20px;
-			background: linear-gradient(135deg, #1e293b, #334155);
+			margin-bottom: 50px;
+			border-bottom: 1px solid var(--border);
+			padding-bottom: 30px;
 		}
 
 		h1 {
-			color: #8a2be2;
-			font-size: 2.5rem;
-			margin-bottom: 10px;
+			font-size: 2.5em;
+			margin: 0;
+			color: #ffffff;
 		}
 
-		h2 {
-			color: #7dd3fc;
-			border-left: 4px solid #8a2be2;
-			padding-left: 10px;
-			margin-top: 40px;
+		.subtitle {
+			color: var(--accent-green);
+			font-size: 1.3em;
+			font-weight: 600;
+			margin-top: 10px;
+			font-family: 'Courier New', Courier, monospace;
+			min-height: 1.6em;
 		}
 
-		p,
-		li {
-			font-size: 1.1rem;
+		.cursor {
+			display: inline-block;
+			width: 10px;
+			height: 1.2em;
+			background-color: var(--accent-green);
+			animation: blink 1s infinite;
+			vertical-align: middle;
 		}
 
-		ul {
-			list-style: none;
-			padding-left: 0;
+		@keyframes blink {
+
+			0%,
+			100% {
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 0;
+			}
 		}
 
-		li::before {
-			content: "✨ ";
-			color: #8a2be2;
+		.bio {
+			color: var(--text-secondary);
+			max-width: 600px;
+			margin: 20px auto 0;
 		}
 
-		a {
-			color: #38bdf8;
+		.nav-links {
+			margin-top: 25px;
+		}
+
+		.nav-links a {
+			color: var(--accent);
 			text-decoration: none;
+			margin: 0 10px;
+			font-weight: 500;
+			border: 1px solid var(--border);
+			padding: 8px 16px;
+			border-radius: 6px;
+			transition: all 0.3s ease;
 		}
 
-		a:hover {
-			text-decoration: underline;
+		.nav-links a:hover {
+			background-color: var(--accent);
+			color: var(--bg-color);
+			border-color: var(--accent);
+			transform: translateY(-2px);
 		}
 
 		section {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 20px;
+			margin-bottom: 50px;
+			animation: fadeIn 0.8s ease-in-out;
 		}
 
-		.stats {
-			text-align: center;
-			margin-top: 30px;
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
-		img {
-			max-width: 100%;
+		h2 {
+			color: #ffffff;
+			border-bottom: 2px solid var(--accent-green);
+			display: inline-block;
+			padding-bottom: 5px;
+			margin-bottom: 20px;
+		}
+
+		.cert-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 20px;
+		}
+
+		.cert-card {
+			background: var(--card-bg);
+			border: 1px solid var(--border);
 			border-radius: 8px;
+			padding: 20px;
+			transition: all 0.3s ease;
+		}
+
+		.cert-card:hover {
+			transform: translateY(-5px);
+			border-color: var(--accent-green);
+			box-shadow: 0 4px 12px rgba(63, 185, 80, 0.1);
+		}
+
+		.cert-card h3 {
+			margin: 0 0 10px 0;
+			color: var(--accent);
+		}
+
+		.cert-card p {
+			margin: 0;
+			color: var(--text-secondary);
+			font-size: 0.9em;
+		}
+
+		.project-list {
+			list-style: none;
+			padding: 0;
+		}
+
+		.project-list li {
+			background: var(--card-bg);
+			border: 1px solid var(--border);
+			border-radius: 8px;
+			padding: 20px;
+			margin-bottom: 15px;
+			transition: all 0.3s ease;
+		}
+
+		.project-list li:hover {
+			border-color: var(--accent);
+		}
+
+		.project-list a {
+			color: var(--accent);
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 1.1em;
+		}
+
+		.project-list a:hover {
+			text-decoration: underline;
+		}
+
+		.project-list p {
+			margin: 8px 0 0 0;
+			color: var(--text-secondary);
+		}
+
+		.skills-tags span {
+			display: inline-block;
+			background: #1f2937;
+			color: var(--accent);
+			padding: 6px 12px;
+			border-radius: 20px;
+			margin: 5px 5px 5px 0;
+			font-size: 0.9em;
+			border: 1px solid var(--border);
+			transition: all 0.2s;
+		}
+
+		.skills-tags span:hover {
+			background: var(--accent);
+			color: var(--bg-color);
+		}
+
+		/* Contact Form Styles */
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			max-width: 500px;
+			margin: 0 auto;
+		}
+
+		.contact-form input,
+		.contact-form textarea {
+			background: var(--card-bg);
+			border: 1px solid var(--border);
+			color: var(--text-primary);
+			padding: 12px;
+			border-radius: 6px;
+			font-family: inherit;
+			font-size: 1em;
+		}
+
+		.contact-form input:focus,
+		.contact-form textarea:focus {
+			outline: none;
+			border-color: var(--accent);
+		}
+
+		.contact-form button {
+			background: var(--accent-green);
+			color: #ffffff;
+			border: none;
+			padding: 12px;
+			border-radius: 6px;
+			font-weight: bold;
+			cursor: pointer;
+			transition: 0.3s;
+			font-size: 1em;
+		}
+
+		.contact-form button:hover {
+			background: #2ea043;
 		}
 
 		footer {
 			text-align: center;
-			padding: 20px;
-			background: #1e293b;
-			color: #94a3b8;
-			margin-top: 40px;
-		}
-
-		hr {
-			border: none;
-			height: 1px;
-			background-color: #334155;
-			margin: 30px 0;
+			color: var(--text-secondary);
+			font-size: 0.8em;
+			margin-top: 50px;
+			border-top: 1px solid var(--border);
+			padding-top: 20px;
 		}
 	</style>
 </head>
 
 <body>
 
-	<header>
-		<h1>Hi there, I'm Nabila Tarannum 👋</h1>
-		<p>🌸 <strong>Programmer | Web Designer | Problem Solver | Data Analyst</strong> 🌸</p>
-	</header>
+	<div class="container">
+		<header>
+			<h1>Nabila Tarannum</h1>
+			<p class="subtitle"><span id="typing-text"></span><span class="cursor"></span></p>
+			<p class="bio">Leveraging strong algorithmic problem-solving and data analysis skills to build secure,
+				automated systems and analyze complex security datasets.</p>
+			<div class="nav-links">
+				<a href="https://github.com/NabilaTarannum" target="_blank">GitHub</a>
+				<a href="https://www.linkedin.com/in/nabilatarannum/" target="_blank">LinkedIn</a>
+				<a href="#contact">Contact</a>
+			</div>
+		</header>
 
-	<section>
-		<p>Welcome to my profile! I’m passionate about building creative web projects, solving coding challenges,
-			and learning new technologies every day.</p>
+			<!-- Native GitHub Stats (100% reliable, no external service) -->
+			<section>
+				<div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+					<div
+						style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 18px 28px; text-align: center; min-width: 130px;">
+						<div style="font-size: 2em; font-weight: 700; color: #3fb950;">45</div>
+						<div style="color: #8b949e; font-size: 0.85em;">Contributions / yr</div>
+					</div>
+					<div
+						style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 18px 28px; text-align: center; min-width: 130px;">
+						<div style="font-size: 2em; font-weight: 700; color: #58a6ff;">14</div>
+						<div style="color: #8b949e; font-size: 0.85em;">Repositories</div>
+					</div>
+					<div
+						style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 18px 28px; text-align: center; min-width: 130px;">
+						<div style="font-size: 2em; font-weight: 700; color: #58a6ff;">7</div>
+						<div style="color: #8b949e; font-size: 0.85em;">Followers</div>
+					</div>
+					<div
+						style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 18px 28px; text-align: center; min-width: 130px;">
+						<div style="font-size: 1.1em; font-weight: 700; color: #3fb950; margin-top: 6px;">Python · C++ · C</div>
+						<div style="color: #8b949e; font-size: 0.85em;">Core Languages</div>
+					</div>
+				</div>
+			</section>
 
-		<h2>🧠 About Me</h2>
-		<ul>
-			<li>I love writing clean and efficient Python code</li>
-			<li>I design responsive and modern web interfaces</li>
-			<li>I enjoy solving problems on BeeCrowd & other platforms</li>
-			<li>Interested in data analysis and visualization</li>
-			<li>Currently exploring advanced programming concepts</li>
-		</ul>
+			<section>
+				<h2>🏆 Certifications</h2>
+				<div class="cert-grid">
+					<div class="cert-card">
+						<h3>Python (Basic)</h3>
+						<p>HackerRank Verified. Scripting, automation, data parsing, and building security tooling.</p>
+						<a href="https://www.hackerrank.com/certificates/f974f020dd88" target="_blank" class="verify-btn">Verify
+							Certificate →</a>
+					</div>
+					<div class="cert-card">
+						<h3>Problem Solving (Intermediate)</h3>
+						<p>HackerRank Verified. Advanced algorithmic thinking and edge-case handling — the core of threat analysis.
+						</p>
+						<a href="https://www.hackerrank.com/certificates/f974f020dd88" target="_blank" class="verify-btn">Verify
+							Certificate →</a>
+					</div>
+					<div class="cert-card">
+						<h3>Problem Solving (Basic)</h3>
+						<p>HackerRank Verified. Foundational logic, debugging, and optimized code under constraints.</p>
+						<a href="https://www.hackerrank.com/certificates/f974f020dd88" target="_blank" class="verify-btn">Verify
+							Certificate →</a>
+					</div>
+					<div class="cert-card">
+						<h3>CSS (Basic)</h3>
+						<p>HackerRank Verified. Front-end fundamentals — useful context for web security &amp; secure UI practices.
+						</p>
+						<a href="https://www.hackerrank.com/certificates/f974f020dd88" target="_blank" class="verify-btn">Verify
+							Certificate →</a>
+					</div>
+				</div>
+			</section>
 
-		<h2>🛠️ Tech Stack</h2>
-		<ul>
-			<li><b>Languages:</b> Python, C, C++, HTML, CSS</li>
-			<li><b>Frameworks:</b> Flask, React (learning), Bootstrap</li>
-			<li><b>Tools:</b> Git, VS Code, Linux</li>
-		</ul>
+		<section>
+			<h2>💻 Featured Projects</h2>
+			<ul class="project-list">
+				<li>
+					<a href="https://github.com/NabilaTarannum/Problem-Solving" target="_blank">Algorithmic Problem
+						Solving</a>
+					<p>A curated collection of complex algorithmic challenges solved in Python and C, demonstrating
+						rigorous debugging and optimized logic.</p>
+				</li>
+				<li>
+					<a href="https://github.com/NabilaTarannum/Data_Analysis" target="_blank">Data Analysis & Security
+						Parsing</a>
+					<p>Python and Jupyter Notebook projects focused on cleaning, structuring, and analyzing complex
+						datasets, including security log parsing.</p>
+				</li>
+				<li>
+					<a href="https://github.com/NabilaTarannum/Agent-Reach" target="_blank">OSINT & Reconnaissance
+						Tooling</a>
+					<p>Exploring CLI-based automated data gathering and Open Source Intelligence (OSINT) techniques for
+						threat intelligence.</p>
+				</li>
+			</ul>
+		</section>
 
-		<h2>📚 Projects</h2>
-		<ul>
-			<li>🔗 <a href="#">Wooden Blocks – BeeCrowd Problem 3384 Solution</a></li>
-			<li>🌐 <a href="#">Personal Portfolio Website</a></li>
-			<li>🧮 <a href="#">Data Analysis Project</a></li>
-		</ul>
+		<section>
+			<h2>🛠️ Technical Arsenal</h2>
+			<div class="skills-tags">
+				<span>Python</span>
+				<span>C / C++</span>
+				<span>Algorithmic Logic</span>
+				<span>Data Parsing</span>
+				<span>Automation Scripting</span>
+				<span>OSINT Basics</span>
+				<span>Git / GitHub</span>
+				<span>Jupyter / Pandas</span>
+			</div>
+		</section>
 
-		<h2>📈 GitHub Stats</h2>
-		<div class="stats">
-			<img src="https://github-readme-stats.vercel.app/api?username=NabilaTarannum&show_icons=true&theme=tokyonight"
-				alt="GitHub Stats">
-			<br><br>
-			<img src="https://github-readme-streak-stats.herokuapp.com/?user=NabilaTarannum&theme=tokyonight"
-				alt="GitHub Streak">
-			<br><br>
-			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=NabilaTarannum&layout=compact&theme=tokyonight"
-				alt="Top Languages">
-		</div>
+		<section id="contact">
+			<h2>📬 Get In Touch</h2>
+			<p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px;">Have a project, freelance
+				opportunity, or just want to connect? Send me a message!</p>
+			<!-- IMPORTANT: Replace 'YOUR_FORMSPREE_ID' below with your actual Formspree endpoint (instructions below) -->
+			<form class="contact-form" action="https://formspree.io/f/xkjrgbob" method="POST">
+				<input type="text" name="name" placeholder="Your Name" required>
+				<input type="email" name="email" placeholder="Your Email" required>
+				<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+				<button type="submit">Send Message</button>
+			</form>
+		</section>
 
-		<h2>💬 Connect With Me</h2>
-		<ul>
-			<li><b>Email:</b> nabilatarannum2023@gmail.com</li>
-			<li><b>Portfolio:</b> <a href="#">NabilaTarannum.github.io</a></li>
-			<li><b>LinkedIn:</b> <a href="#">linkedin.com/in/nabilatarannum</a></li>
-		</ul>
-	</section>
+		<footer>
+			<p>&copy; 2026 Nabila Tarannum. Built with pure HTML/CSS/JS. Hosted on GitHub Pages.</p>
+		</footer>
+	</div>
 
-	<footer>
-		⭐ <i>“Code is like art — every line can create something beautiful.”</i> ⭐
-	</footer>
+	<script>
+		// Typing Animation Script
+		const textToType = "Aspiring Cybersecurity Engineer | Python Developer";
+		const typingElement = document.getElementById("typing-text");
+		let charIndex = 0;
+
+		function typeText() {
+			if (charIndex < textToType.length) {
+				typingElement.textContent += textToType.charAt(charIndex);
+				charIndex++;
+				setTimeout(typeText, 50); // Speed of typing (lower = faster)
+			}
+		}
+
+		// Start typing when page loads
+		window.onload = typeText;
+	</script>
 
 </body>
 
